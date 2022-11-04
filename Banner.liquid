@@ -1,0 +1,47 @@
+<section class="new_slider">
+  <div class="slider_home">
+    {% for block in section.blocks %}
+    <div class="new_slide">
+      <div class="slide_wrap">
+        <div class="image_box">
+        	<img src="{{ block.settings.slide_img | img_url: 'master' }}" alt="image">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>  
+{% schema %}
+  {
+"name": "Slider",
+"settings": [
+ 
+],
+"blocks": [
+  {
+  "type": "Image",
+  "name": "Image",
+  "settings": [
+		{
+          "type": "image_picker",
+          "id": "slide_img",
+          "label": "Image"
+        }
+       
+      ]
+    }
+  ],
+"presets": [
+ {
+   "name": "Slider",
+   "category": "Home"
+ }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
